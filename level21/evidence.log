@@ -1,0 +1,8 @@
+--- LEVEL 21 COMPLETION LOG ---
+Target: bandit22 password
+Discovery: Found cronjob in /etc/cron.d/cronjob_bandit22
+Script Path: /usr/bin/cronjob_bandit22.sh
+Execution:
+  Ran 'cat /usr/bin/cronjob_bandit22.sh'
+  Found temporary password file at: /tmp/t7O6lds9S0Rq2p9aeb8AD6S59V3n9P56
+Result: Successfully retrieved password for Level 22.
