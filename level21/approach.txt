@@ -1,0 +1,7 @@
+Target: Bandit Level 21
+Goal: Inspect the cronjob running on the system.
+
+Steps:
+1. Check /etc/cron.d/ for any scheduled tasks.
+2. Read the cron file to find the script path.
+3. Read the script to find where the password is hidden.
