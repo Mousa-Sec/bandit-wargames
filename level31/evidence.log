@@ -1,0 +1,1 @@
+[EVIDENCE LOG - LEVEL 30-31] Extracted credential from orphaned Git blob referenced by an immutable annotated tag ('secret') using 'git show'.
