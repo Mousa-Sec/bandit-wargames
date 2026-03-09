@@ -1,0 +1,1 @@
+[EVIDENCE LOG - LEVEL 25] Escaped restricted shell (rbash) by shrinking terminal to force 'more' pager, entering 'vi', and spawning '/bin/sh'.
