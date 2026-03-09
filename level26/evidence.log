@@ -1,0 +1,1 @@
+[EVIDENCE LOG - LEVEL 26] Escalated privileges using SUID binary './bandit27-do' to execute commands as the bandit27 user.
