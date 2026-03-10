@@ -1,0 +1,1 @@
+[EVIDENCE LOG - LEVEL 16-17] Performed 'nmap' port scan to locate active SSL service, connected via 'openssl', and extracted RSA key payload.
