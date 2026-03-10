@@ -1,0 +1,1 @@
+[EVIDENCE LOG - LEVEL 12-13] Extracted credential from a nested archive by sequentially reversing xxd hexdump, gzip, bzip2, and tar compression layers.

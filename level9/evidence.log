@@ -1,0 +1,1 @@
+[EVIDENCE LOG - LEVEL 8-9] Extracted the only non-repeating line in a file using 'sort' piped into 'uniq -u'.
