@@ -17,3 +17,6 @@ ssh -i bandit17.key bandit18@bandit.labs.overthewire.org -p 2220 "cat readme"
 [REDACTED PRIVATE KEY]
 
 
+# password using diff: [REDACTED]
+
+
