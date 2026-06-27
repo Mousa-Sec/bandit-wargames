@@ -7,3 +7,6 @@ Authenticate into the next system level strictly by utilizing a private SSH asym
 ```bash
 # Establish remote verification targeting the localhost using the private key
 ssh -i sshkey.private bandit14@localhost -p 2220
+
+[REDACTED PRIVATE KEY]
+
