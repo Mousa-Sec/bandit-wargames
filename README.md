@@ -1,4 +1,4 @@
-# 🏁 OverTheWire: Bandit Wargames Portfolio
+# 🏁 OverTheWire: Bandit Wargames
 
 A structured, high-fidelity repository documenting practical solutions, Linux administration fundamentals, and security concepts encountered throughout the **OverTheWire Bandit** CTF challenge series.
 
