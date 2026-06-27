@@ -25,7 +25,33 @@ bandit-wargames/
 ├── level01/         # Relative path boundaries & special characters
 ├── level02/         # Shell tokenization & space handling ciphers
 ├── level03/         # Hidden dotfile disclosure mechanics
-├── ...
-├── level24/         # Automated background cron spool exploit vectors
-├── level25/         # Socket manipulation & multi-combination brute forcing
-└── level26/         # Restricted shell escapes via terminal pager overflow (Vim)
+├── level04/         # File type evaluation & ASCII text isolation
+├── level05/         # Recursive directory size & attribute filtering
+├── level06/         # System-wide multi-criteria user/group asset hunting
+├── level07/         # Text pattern filtering via stream pipelining (grep)
+├── level08/         # Array line sorting & unique frequency extraction
+├── level09/         # Extracting human-readable strings from raw binaries
+├── level10/         # Parsing hidden indicator flags in mixed clutter
+├── level11/         # Reversing Base64 binary-to-text data translations
+├── level12/         # Defeating alphabetic rotation ciphers (ROT13)
+├── level13/         # Hexdump reversal & multi-tier archive decompression
+├── level14/         # Cryptographic asymmetric private key verification
+├── level15/         # Network socket I/O communication over TCP ports
+├── level16/         # Encrypted transport layer security (TLS/SSL) tunnels
+├── level17/         # Differential byte-level file comparison analysis (diff)
+├── level18/         # Non-interactive shell command injection overrides
+├── level19/         # Privilege interception via SetUID file descriptors
+├── level20/         # Socket daemon simulation & background pipe manipulation
+├── level21/         # Enumerating scheduled cron tasks for temporary logs
+├── level22/         # Reversing deterministic cryptographic MD5 user hashes
+├── level23/         # Custom automated cron spool exploitation scripts
+├── level24/         # Automated loop brute-forcing over raw loopback ports
+├── level25/         # Restricted shell escapes via terminal pager overflow
+├── level26/         # Elevated data extraction using contextual wrapper modules
+├── level27/         # Local internal repository cloning configurations
+├── level28/         # Auditing historical transaction logging configurations
+├── level29/         # Branch segregation & unmerged commit data discovery
+├── level30/         # Metadata release anchor tag forensic discovery
+├── level31/         # Overriding system configuration exclusion lists (.gitignore)
+├── level32/         # POSIX variable token substitution escapes ($0)
+└── level33/         # Sub-shell tracking & milestone completion validation
