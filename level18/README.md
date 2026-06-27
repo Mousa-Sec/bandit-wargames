@@ -13,5 +13,3 @@ chmod 600 bandit17.key
 
 # Step 3: Authenticate using the key (-i) and append a command string to read the password
 ssh -i bandit17.key bandit18@bandit.labs.overthewire.org -p 2220 "cat readme"
-
-[level18.txt](https://github.com/user-attachments/files/29405654/level18.txt)
