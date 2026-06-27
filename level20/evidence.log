@@ -1,1 +1,0 @@
-[EVIDENCE LOG - LEVEL 19-20] Escalated privileges by executing a Set-User-ID (SUID) binary to read an otherwise restricted password file.

@@ -1,1 +1,0 @@
-[EVIDENCE LOG - LEVEL 32-33] Escaped custom uppercase restricted shell by executing the '$0' positional parameter, spawning an unfiltered SUID sub-shell to extract the final credential.
