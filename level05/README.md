@@ -10,4 +10,4 @@ file ./*
 
 # Step 2: Read the isolated plain-text target file
 cat ./file07
-# Password:4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw
+# Password: 4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw
