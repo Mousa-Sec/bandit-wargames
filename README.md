@@ -1,59 +1,60 @@
-# 🏁 OverTheWire: Bandit Wargames
+# OverTheWire: Bandit Wargame
 
 > **Note:** Level passwords and SSH keys are redacted on purpose. Committing credentials to a public repo is bad practice, even for a wargame.
 
-A structured, high-fidelity repository documenting practical solutions, Linux administration fundamentals, and security concepts encountered throughout the **OverTheWire Bandit** CTF challenge series.
+My solutions and notes for the [OverTheWire Bandit](https://overthewire.org/wargames/bandit/) wargame, levels 0 to 33. Each folder covers one level: the goal, the commands I used, and the concept behind it.
 
 ---
 
-## 🛠️ Core Skills & Security Vectors Demonstrated
+## What this covers
 
-This project serves as an interactive playground showcasing key competencies in Linux operating system environments and fundamental security engineering concepts:
-
-* **Linux System Administration:** Deep familiarity with POSIX file boundaries, permission access masks (`chmod`, `chown`, SetUID binaries), system configurations (`/etc/passwd`), and background task managers (`cron`, `cron.d`).
-* **Advanced Data Piping & Filtering:** Mastery of intermediate Linux data text streaming utilities (`grep`, `awk`, `tr`, `sort`, `uniq`, `strings`, `xxd`) to parse noise out of corrupt or massive binary blobs.
-* **Network Tunnelling & Socket I/O:** Establishing secure terminal loops, identifying socket vectors (`nmap`), interacting with raw TCP ports over custom background daemons (`netcat`), and managing encrypted data streams (`OpenSSL s_client`).
-* **Cryptographic Analysis:** Interacting with Base64 encoding schemas, evaluating differential metrics between file sets (`diff`), and implementing deterministic cryptographic hash functions (`md5sum`).
-* **Git Forensic Auditing:** Mining historical repository transaction logs (`git log`, `git show`), managing alternate project branches (`git branch`), inspecting release structures (`git tag`), and debugging repository configuration constraints (`.gitignore`).
+* **Linux files and permissions:** special and hidden filenames, finding files by size, owner and group, and using SetUID binaries to run commands as another user.
+* **Text processing:** `grep`, `sort`, `uniq`, `strings`, `tr`, `base64` and `xxd`, plus unpacking a file compressed many times over.
+* **Networking:** logging in with SSH keys, talking to services with `netcat`, connecting over TLS with `openssl s_client`, and scanning for listening ports with `nmap`.
+* **Scheduled tasks:** reading cron jobs to work out what they do, then writing a script for a cron job to run.
+* **Shell escapes:** breaking out of a restricted shell through a pager, and through `$0`.
+* **Git:** recovering data from commit history, branches and tags, and working around `.gitignore`.
+* **Automation:** a Bash loop to brute-force a 4-digit PIN against a local service.
 
 ---
 
-## 📂 Repository Architecture
+## Repository layout
 
-The workspace utilizes a strictly organized, padded chronological directory model. Each module has been completely refactored to house a standalone, high-grade documentation hub detailing the forensic steps, command blueprints, and core concepts discovered at that specific stage:
+Folder `levelNN` covers the step from level NN-1 to level NN.
 
 ```text
 bandit-wargames/
-├── level01/         # Relative path boundaries & special characters
-├── level02/         # Shell tokenization & space handling ciphers
-├── level03/         # Hidden dotfile disclosure mechanics
-├── level04/         # File type evaluation & ASCII text isolation
-├── level05/         # Recursive directory size & attribute filtering
-├── level06/         # System-wide multi-criteria user/group asset hunting
-├── level07/         # Text pattern filtering via stream pipelining (grep)
-├── level08/         # Array line sorting & unique frequency extraction
-├── level09/         # Extracting human-readable strings from raw binaries
-├── level10/         # Parsing hidden indicator flags in mixed clutter
-├── level11/         # Reversing Base64 binary-to-text data translations
-├── level12/         # Defeating alphabetic rotation ciphers (ROT13)
-├── level13/         # Hexdump reversal & multi-tier archive decompression
-├── level14/         # Cryptographic asymmetric private key verification
-├── level15/         # Network socket I/O communication over TCP ports
-├── level16/         # Encrypted transport layer security (TLS/SSL) tunnels
-├── level17/         # Differential byte-level file comparison analysis (diff)
-├── level18/         # Non-interactive shell command injection overrides
-├── level19/         # Privilege interception via SetUID file descriptors
-├── level20/         # Socket daemon simulation & background pipe manipulation
-├── level21/         # Enumerating scheduled cron tasks for temporary logs
-├── level22/         # Reversing deterministic cryptographic MD5 user hashes
-├── level23/         # Custom automated cron spool exploitation scripts
-├── level24/         # Automated loop brute-forcing over raw loopback ports
-├── level25/         # Restricted shell escapes via terminal pager overflow
-├── level26/         # Elevated data extraction using contextual wrapper modules
-├── level27/         # Local internal repository cloning configurations
-├── level28/         # Auditing historical transaction logging configurations
-├── level29/         # Branch segregation & unmerged commit data discovery
-├── level30/         # Metadata release anchor tag forensic discovery
-├── level31/         # Overriding system configuration exclusion lists (.gitignore)
-├── level32/         # POSIX variable token substitution escapes ($0)
-└── level33/         # Sub-shell tracking & milestone completion validation
+├── level01/   # 0 → 1:   log in over SSH and read a file
+├── level02/   # 1 → 2:   read a file named "-"
+├── level03/   # 2 → 3:   read a file with spaces in its name
+├── level04/   # 3 → 4:   find a hidden file
+├── level05/   # 4 → 5:   find the only human-readable file (file)
+├── level06/   # 5 → 6:   find a file by size and properties (find)
+├── level07/   # 6 → 7:   search the whole system by owner, group and size
+├── level08/   # 7 → 8:   grep for a word in a large file
+├── level09/   # 8 → 9:   find the only line that appears once (sort, uniq)
+├── level10/   # 9 → 10:  extract readable strings from a binary (strings)
+├── level11/   # 10 → 11: decode Base64
+├── level12/   # 11 → 12: decode ROT13 (tr)
+├── level13/   # 12 → 13: reverse a hexdump and decompress it repeatedly (xxd)
+├── level14/   # 13 → 14: log in with an SSH private key
+├── level15/   # 14 → 15: send data to a local port (netcat)
+├── level16/   # 15 → 16: send data over TLS (openssl s_client)
+├── level17/   # 16 → 17: scan a port range and find the TLS service (nmap)
+├── level18/   # 17 → 18: compare two files (diff)
+├── level19/   # 18 → 19: run a command over SSH when login is blocked
+├── level20/   # 19 → 20: use a SetUID binary
+├── level21/   # 20 → 21: answer a SetUID client with a netcat listener
+├── level22/   # 21 → 22: read a cron job
+├── level23/   # 22 → 23: work out a cron script that uses an MD5 hash
+├── level24/   # 23 → 24: write a script for a cron job to run
+├── level25/   # 24 → 25: brute-force a 4-digit PIN with a Bash loop
+├── level26/   # 25 → 26: escape a restricted shell through the more pager
+├── level27/   # 26 → 27: use a SetUID binary from the escaped shell
+├── level28/   # 27 → 28: clone a git repo
+├── level29/   # 28 → 29: recover data from git history (git log)
+├── level30/   # 29 → 30: find data on another branch (git branch)
+├── level31/   # 30 → 31: find data in a tag (git tag)
+├── level32/   # 31 → 32: push a file past .gitignore
+└── level33/   # 32 → 33: escape an uppercase shell with $0
+```
