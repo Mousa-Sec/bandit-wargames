@@ -1,5 +1,7 @@
 # 🏁 OverTheWire: Bandit Wargames
 
+> **Note:** Level passwords and SSH keys are redacted on purpose. Committing credentials to a public repo is bad practice, even for a wargame.
+
 A structured, high-fidelity repository documenting practical solutions, Linux administration fundamentals, and security concepts encountered throughout the **OverTheWire Bandit** CTF challenge series.
 
 ---
